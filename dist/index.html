@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Chat F1</title>
+</head>
+
+<body>
+
+    <div class="contenedor-inicial">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container container-fluid">
+                    <div>
+                        <a class="navbar-brand" href="#">
+                            <img src="../src/img/f1_logo.png" alt="formula uno logo">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNavAltMarkup">
+                        <div class="navbar-nav">
+                            <div class="dropdown">
+                                <button class="btn-user dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Usuario
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#" class="nav-link" href="#" type="button"
+                                            class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#login">Ingresar</a></li>
+                                    <li><a class="dropdown-item" href="#" class="nav-link" href="#" type="button"
+                                            class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#register">Registrarse</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+        <main>
+
+            <div class="header-title">
+                <h1 class="text-center"><span lang="en">Race Comment</span></h1>
+                <p class="text-center fs-4 w-50 m-auto">Disfruta de una sección exclusiva de comentarios en tiempo
+                    real
+                    mientras miras todo el fin de semana de Fórmula 1.</p>
+            </div>
+
+            <!--Modal Iniciar Sesión-->
+            <div class="modal fade p-0" id="login" tabindex="-1" aria-labelledby="loginLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form class="loginForm">
+                            <div class="modal-header">
+                                <h3 class="modal-title fs-5" id="loginLabel">Login</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="emailLogin"
+                                        placeholder="name@example.com">
+                                    <label for="emailLogin">Correo electrónico</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="passwordLogin"
+                                        placeholder="Password">
+                                    <label for="passwordLogin">contraseña</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!---->
+
+            <!--Modal Registro-->
+            <div class="modal fade p-0" id="register" tabindex="-1" aria-labelledby="registerLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form id="registerForm">
+                            <div class="modal-header">
+                                <h3 class="modal-title fs-5" id="registerLabel">Registrarse</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="nameRegister" placeholder="Nombre">
+                                    <label for="nameRegister">Nombre</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="lastNameRegister"
+                                        placeholder="Apellido">
+                                    <label for="lastNameRegister">Apellido</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="userRegister" placeholder="Apellido">
+                                    <label for="userRegister">Usuario</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="emailRegister"
+                                        placeholder="name@formula1.com">
+                                    <label for="emailRegister">Correo electrónico</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="passwordRegister"
+                                        placeholder="Contraseña">
+                                    <label for="passwordRegister">Contraseña</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Registrarse</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!---->
+
+            <section class="comments-write">
+                <div class="container">
+                    <h2 class="text-center">Deja tu Comentario</h2>
+                    <form action="#" method="post" class="d-flex flex-column justify-content-center align-items-center">
+                        <div class="mb-3">
+                            <label for="comentarioPersonal" class="form-label fw-bold">Postea un comentario:</label>
+                            <textarea class="form-control" id="comentarioPersonal" rows="10"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-5">Enviar</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="comments-show">
+            </section>
+        </main>
+
+        <footer class="py-5">
+
+            <div
+                class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-lg-around gap-2">
+                <a href="#"><img src="../src/img/f1_logo.png" alt="logo formula 1"></a>
+                <ul class="text-center text-md-start">
+                    <span>Alumnos:</span>
+                    <li>Guillermo Di Martino</li>
+                    <li>Tomás Paravic</li>
+                </ul>
+                <ul class="text-center text-md-start">
+                    <span>Profesor:</span>
+                    <li>Nicolás Amendolara</li>
+                </ul>
+
+                <ul class="text-center text-md-start">
+                    <span>Materia:</span>
+                    <li>Clientes Web Mobile</li>
+                    <span>Comisión:</span>
+                    <li>DWN4AV</li>
+                </ul>
+            </div>
+
+            <p class="mt-3">&copy; 2024 Formula 1 - Di Martino - Paravic</p>
+
+        </footer>
+    </div>
+
+    <script src="bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
