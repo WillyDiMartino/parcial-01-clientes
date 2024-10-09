@@ -1,17 +1,21 @@
-import {db, auth} from './firebase.js';
+import { db, auth } from './firebase.js'; 
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
 
-const registerForm = getElementById('registerForm');
+const db = getFirestore(app);
+const auth = getAuth(app);
+
+const registerForm = document.getElementById('registerForm');
 
 registerForm.addEventListener('submit', async (e) =>{
+   
     e.preventDefault();
-    const name = getElementById('nameRegister').value;
-    const lastName = getElementById('lastNameRegister').value;
-    const user = getElementById('userRegister').value;
+    const name = document.getElementById('nameRegister').value;
+    const lastName = document.getElementById('lastNameRegister').value;
+    const user = document.getElementById('userRegister').value;
     const timestamp = new Date().getTime();
-    const email = getElementById('emailRegister').value;
-    const password = getElementById('passwordRegister').value;
+    const email = document.getElementById('emailRegister').value;
+    const password = document.getElementById('passwordRegister').value;
     try{
         await createUserWithEmailAndPassword(auth, email, password);
         await addDoc(collection(db, 'users'), {
@@ -27,3 +31,5 @@ registerForm.addEventListener('submit', async (e) =>{
         alert("Error al guardar los datos");
     }
 })
+
+console.log('Hello World!');
