@@ -29,17 +29,10 @@
                     <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <div class="dropdown">
-                                <button class="btn-user dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Usuario
-                                </button>
+                                <button class="btn-user dropdown-toggle" type="button" data-bs-toggle="dropdown"aria-expanded="false" id="btnUser"></button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#" class="nav-link" href="#" type="button"
-                                            class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#login">Ingresar</a></li>
-                                    <li><a class="dropdown-item" href="#" class="nav-link" href="#" type="button"
-                                            class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#register">Registrarse</a></li>
+                                    <div id="authNavBar">
+                                    </div>
                                 </ul>
                             </div>
                         </div>
@@ -81,7 +74,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Ingresar</button>
                             </div>
                         </form>
                     </div>
@@ -126,7 +119,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Registrarse</button>
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Registrarse</button>
                             </div>
                         </form>
                     </div>
