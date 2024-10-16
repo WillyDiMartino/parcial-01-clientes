@@ -1,8 +1,5 @@
 import { createUser } from './register.js';
 import { login, authNav } from './auth.js';
-import { getDoc } from "firebase/firestore";
-import { doc } from "firebase/firestore";
-import { db, auth } from './firebase.js';
 
 const registerForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('login');
@@ -34,22 +31,3 @@ loginForm.addEventListener('submit', async (e) => {
 document.addEventListener('DOMContentLoaded', () => {
     authNav();
 });
-
-const user = auth.currentUser;
-const btnUser = document.getElementById('btnUser');
-if (user){
-    const userId = user.uid;
-    const userRef = doc(db, 'users', userId);
-
-    try{
-        const userDoc = await getDoc(userRef);
-        if(userDoc.exists()){
-            const userData = userDoc.data();
-            btnUser.innerHTML = userData.username;
-        }else{
-            btnUser.innerHTML = "Usuario";
-        }
-    } catch (error){
-        console.error("Error al obtener el usuario: ", error);
-    }
-}

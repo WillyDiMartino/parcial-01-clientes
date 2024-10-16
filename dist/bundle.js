@@ -74,9 +74,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {\n__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _register_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.js */ \"./src/register.js\");\n/* harmony import */ var _auth_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.js */ \"./src/auth.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nconst registerForm = document.getElementById('registerForm');\r\nconst loginForm = document.getElementById('login');\r\n\r\nregisterForm.addEventListener('submit', async (e) => {\r\n    e.preventDefault();\r\n    const name = document.getElementById('nameRegister').value;\r\n    const lastName = document.getElementById('lastNameRegister').value;\r\n    const username = document.getElementById('userRegister').value;\r\n    const timestamp = new Date().getTime();\r\n    const email = document.getElementById('emailRegister').value;\r\n    const password = document.getElementById('passwordRegister').value;\r\n    await (0,_register_js__WEBPACK_IMPORTED_MODULE_0__.createUser)({ name, lastName, username, timestamp, email, password });\r\n    alert(\"Usuario creado\");\r\n    registerForm.reset();\r\n})\r\n\r\n\r\nloginForm.addEventListener('submit', async (e) => {\r\n    e.preventDefault();\r\n    const email = document.getElementById('emailLogin').value;\r\n    const password = document.getElementById('passwordLogin').value;\r\n    await (0,_auth_js__WEBPACK_IMPORTED_MODULE_1__.login)({ email, password });\r\n    alert(\"Usuario logueado\");\r\n    loginForm.reset();\r\n})\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    ;(0,_auth_js__WEBPACK_IMPORTED_MODULE_1__.authNav)();\r\n});\r\n\r\nconst user = _firebase_js__WEBPACK_IMPORTED_MODULE_3__.auth.currentUser;\r\nconst btnUser = document.getElementById('btnUser');\r\nif (user){\r\n    const userId = user.uid;\r\n    const userRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_3__.db, 'users', userId);\r\n\r\n    try{\r\n        const userDoc = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.getDoc)(userRef);\r\n        if(userDoc.exists()){\r\n            const userData = userDoc.data();\r\n            btnUser.innerHTML = userData.username;\r\n        }else{\r\n            btnUser.innerHTML = \"Usuario\";\r\n        }\r\n    } catch (error){\r\n        console.error(\"Error al obtener el usuario: \", error);\r\n    }\r\n}\n__webpack_async_result__();\n} catch(e) { __webpack_async_result__(e); } }, 1);\n\n//# sourceURL=webpack://parcial-01-clientes/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _register_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./register.js */ \"./src/register.js\");\n/* harmony import */ var _auth_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./auth.js */ \"./src/auth.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! firebase/auth */ \"./node_modules/firebase/auth/dist/esm/index.esm.js\");\n\r\n\r\n\r\n\r\n\r\n\r\nconst registerForm = document.getElementById('registerForm');\r\nconst loginForm = document.getElementById('login');\r\n\r\nregisterForm.addEventListener('submit', async (e) => {\r\n    e.preventDefault();\r\n    const name = document.getElementById('nameRegister').value;\r\n    const lastName = document.getElementById('lastNameRegister').value;\r\n    const username = document.getElementById('userRegister').value;\r\n    const timestamp = new Date().getTime();\r\n    const email = document.getElementById('emailRegister').value;\r\n    const password = document.getElementById('passwordRegister').value;\r\n    await (0,_register_js__WEBPACK_IMPORTED_MODULE_0__.createUser)({ name, lastName, username, timestamp, email, password });\r\n    alert(\"Usuario creado\");\r\n    registerForm.reset();\r\n})\r\n\r\n\r\nloginForm.addEventListener('submit', async (e) => {\r\n    e.preventDefault();\r\n    const email = document.getElementById('emailLogin').value;\r\n    const password = document.getElementById('passwordLogin').value;\r\n    await (0,_auth_js__WEBPACK_IMPORTED_MODULE_1__.login)({ email, password });\r\n    alert(\"Usuario logueado\");\r\n    loginForm.reset();\r\n})\r\n\r\n\r\ndocument.addEventListener('DOMContentLoaded', () => {\r\n    ;(0,_auth_js__WEBPACK_IMPORTED_MODULE_1__.authNav)();\r\n});\r\n\r\nconst btnUser = document.getElementById('btnUser');\r\n\r\n(0,firebase_auth__WEBPACK_IMPORTED_MODULE_4__.onAuthStateChanged)(_firebase_js__WEBPACK_IMPORTED_MODULE_3__.auth, async (user) => {\r\n    if (user) {\r\n        const userId = user.uid;\r\n        const userRef = (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.doc)(_firebase_js__WEBPACK_IMPORTED_MODULE_3__.db, 'users', userId);\r\n\r\n        try {\r\n            const userDoc = await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.getDoc)(userRef);\r\n            if (userDoc.exists()) {\r\n                const userData = userDoc.data();\r\n                btnUser.innerText = userData.username; \r\n            } else {\r\n                btnUser.innerText = \"Usuario\"; \r\n            }\r\n        } catch (error) {\r\n            console.error(\"Error al obtener el usuario: \", error);\r\n            btnUser.innerText = \"Usuario\"; \r\n        }\r\n    } else {\r\n        btnUser.innerText = \"Usuario\";\r\n    }\r\n});\n\n//# sourceURL=webpack://parcial-01-clientes/./src/index.js?");
 
 /***/ }),
 
@@ -86,7 +86,7 @@ eval("__webpack_require__.a(module, async (__webpack_handle_async_dependencies__
   \*************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createUser: () => (/* binding */ createUser)\n/* harmony export */ });\n/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/auth */ \"./node_modules/firebase/auth/dist/esm/index.esm.js\");\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n\r\n \r\n\r\n\r\nconst createUser = async ({ name, lastName, username, timestamp, email, password }) => {\r\n    try {\r\n       \r\n        const userCredential = await (0,firebase_auth__WEBPACK_IMPORTED_MODULE_0__.createUserWithEmailAndPassword)(_firebase_js__WEBPACK_IMPORTED_MODULE_1__.auth, email, password);\r\n        const user = userCredential.user;\r\n        await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.addDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.collection)(_firebase_js__WEBPACK_IMPORTED_MODULE_1__.db, 'users'), {\r\n            name: name,\r\n            lastName: lastName,\r\n            username: username,  \r\n            userId: user.uid,    \r\n            timestamp: timestamp,\r\n        });\r\n        console.log(\"Usuario creado y guardado en Firestore: \", user.uid);\r\n    } catch (error) {\r\n        console.error(\"Error al guardar los datos: \", error);\r\n        alert(\"Error al guardar los datos\");\r\n    }\r\n};\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://parcial-01-clientes/./src/register.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   createUser: () => (/* binding */ createUser)\n/* harmony export */ });\n/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/auth */ \"./node_modules/firebase/auth/dist/esm/index.esm.js\");\n/* harmony import */ var _firebase_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./firebase.js */ \"./src/firebase.js\");\n/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase/firestore */ \"./node_modules/firebase/firestore/dist/esm/index.esm.js\");\n\r\n \r\n\r\n\r\nconst createUser = async ({ name, lastName, username, timestamp, email, password }) => {\r\n    try {\r\n       \r\n        const userCredential = await (0,firebase_auth__WEBPACK_IMPORTED_MODULE_0__.createUserWithEmailAndPassword)(_firebase_js__WEBPACK_IMPORTED_MODULE_1__.auth, email, password);\r\n        const user = userCredential.user;\r\n        await (0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.addDoc)((0,firebase_firestore__WEBPACK_IMPORTED_MODULE_2__.collection)(_firebase_js__WEBPACK_IMPORTED_MODULE_1__.db, 'users'), {\r\n            name: name,\r\n            lastName: lastName,\r\n            username: username,  \r\n            email: user.email,    \r\n            timestamp: timestamp,\r\n        });\r\n        console.log(\"Usuario creado y guardado en Firestore: \", user.uid);\r\n    } catch (error) {\r\n        console.error(\"Error al guardar los datos: \", error);\r\n        alert(\"Error al guardar los datos\");\r\n    }\r\n};\r\n\r\n\r\n\r\n\n\n//# sourceURL=webpack://parcial-01-clientes/./src/register.js?");
 
 /***/ }),
 
@@ -257,75 +257,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/async module */
-/******/ 	(() => {
-/******/ 		var webpackQueues = typeof Symbol === "function" ? Symbol("webpack queues") : "__webpack_queues__";
-/******/ 		var webpackExports = typeof Symbol === "function" ? Symbol("webpack exports") : "__webpack_exports__";
-/******/ 		var webpackError = typeof Symbol === "function" ? Symbol("webpack error") : "__webpack_error__";
-/******/ 		var resolveQueue = (queue) => {
-/******/ 			if(queue && queue.d < 1) {
-/******/ 				queue.d = 1;
-/******/ 				queue.forEach((fn) => (fn.r--));
-/******/ 				queue.forEach((fn) => (fn.r-- ? fn.r++ : fn()));
-/******/ 			}
-/******/ 		}
-/******/ 		var wrapDeps = (deps) => (deps.map((dep) => {
-/******/ 			if(dep !== null && typeof dep === "object") {
-/******/ 				if(dep[webpackQueues]) return dep;
-/******/ 				if(dep.then) {
-/******/ 					var queue = [];
-/******/ 					queue.d = 0;
-/******/ 					dep.then((r) => {
-/******/ 						obj[webpackExports] = r;
-/******/ 						resolveQueue(queue);
-/******/ 					}, (e) => {
-/******/ 						obj[webpackError] = e;
-/******/ 						resolveQueue(queue);
-/******/ 					});
-/******/ 					var obj = {};
-/******/ 					obj[webpackQueues] = (fn) => (fn(queue));
-/******/ 					return obj;
-/******/ 				}
-/******/ 			}
-/******/ 			var ret = {};
-/******/ 			ret[webpackQueues] = x => {};
-/******/ 			ret[webpackExports] = dep;
-/******/ 			return ret;
-/******/ 		}));
-/******/ 		__webpack_require__.a = (module, body, hasAwait) => {
-/******/ 			var queue;
-/******/ 			hasAwait && ((queue = []).d = -1);
-/******/ 			var depQueues = new Set();
-/******/ 			var exports = module.exports;
-/******/ 			var currentDeps;
-/******/ 			var outerResolve;
-/******/ 			var reject;
-/******/ 			var promise = new Promise((resolve, rej) => {
-/******/ 				reject = rej;
-/******/ 				outerResolve = resolve;
-/******/ 			});
-/******/ 			promise[webpackExports] = exports;
-/******/ 			promise[webpackQueues] = (fn) => (queue && fn(queue), depQueues.forEach(fn), promise["catch"](x => {}));
-/******/ 			module.exports = promise;
-/******/ 			body((deps) => {
-/******/ 				currentDeps = wrapDeps(deps);
-/******/ 				var fn;
-/******/ 				var getResult = () => (currentDeps.map((d) => {
-/******/ 					if(d[webpackError]) throw d[webpackError];
-/******/ 					return d[webpackExports];
-/******/ 				}))
-/******/ 				var promise = new Promise((resolve) => {
-/******/ 					fn = () => (resolve(getResult));
-/******/ 					fn.r = 0;
-/******/ 					var fnQueue = (q) => (q !== queue && !depQueues.has(q) && (depQueues.add(q), q && !q.d && (fn.r++, q.push(fn))));
-/******/ 					currentDeps.map((dep) => (dep[webpackQueues](fnQueue)));
-/******/ 				});
-/******/ 				return fn.r ? promise : getResult();
-/******/ 			}, (err) => ((err ? reject(promise[webpackError] = err) : outerResolve(exports)), resolveQueue(queue)));
-/******/ 			queue && queue.d < 0 && (queue.d = 0);
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

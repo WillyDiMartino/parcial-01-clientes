@@ -11,7 +11,7 @@ const createUser = async ({ name, lastName, username, timestamp, email, password
             name: name,
             lastName: lastName,
             username: username,  
-            userId: user.uid,    
+            email: user.email,    
             timestamp: timestamp,
         });
         console.log("Usuario creado y guardado en Firestore: ", user.uid);
