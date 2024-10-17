@@ -1,5 +1,6 @@
 import { createUser } from './register.js';
 import { login, authNav } from './auth.js';
+import './post.js';
 
 const registerForm = document.getElementById('registerForm');
 const loginForm = document.getElementById('login');
@@ -15,8 +16,7 @@ registerForm.addEventListener('submit', async (e) => {
     await createUser({ name, lastName, username, timestamp, email, password });
     alert("Usuario creado");
     registerForm.reset();
-})
-
+});
 
 loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -25,8 +25,7 @@ loginForm.addEventListener('submit', async (e) => {
     await login({ email, password });
     alert("Usuario logueado");
     loginForm.reset();
-})
-
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     authNav();

@@ -128,15 +128,18 @@
             <section class="comments-write">
                 <div class="container">
                     <h2 class="text-center">Deja tu Comentario</h2>
-                    <form action="#" method="post" class="d-flex flex-column justify-content-center align-items-center">
+                    <form id="postForm" action="#" method="post" class="d-flex flex-column justify-content-center align-items-center">
                         <div class="mb-3">
-                            <label for="comentarioPersonal" class="form-label fw-bold">Postea un comentario:</label>
-                            <textarea class="form-control" id="comentarioPersonal" rows="10"></textarea>
+                            <label for="tituloPost" class="form-label fw-bold">Postea un comentario:</label>
+                            <input class="form-control" id="tituloPost" required>
+                            <label for="comentarioPost" class="form-label fw-bold">Postea un comentario:</label>
+                            <textarea class="form-control" id="comentarioPost" rows="10" required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary mb-5">Enviar</button>
                     </form>
                 </div>
             </section>
+            
 
             <section class="comments-show">
             </section>
@@ -169,8 +172,9 @@
 
         </footer>
     </div>
+    
 
-   <script src="bundle.js"></script>
+    <script src="bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
