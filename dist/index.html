@@ -84,53 +84,51 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <form id="registerForm">
-                           
+                            <div class="modal-header">
+                                <h3 class="modal-title fs-5" id="registerLabel">Registrar usuario</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="nameRegister" placeholder="Nombre">
+                                    <label for="nameRegister">Nombre</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="lastNameRegister"
+                                        placeholder="Apellido">
+                                    <label for="lastNameRegister">Apellido</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="userRegister" placeholder="Usuario">
+                                    <label for="userRegister">Usuario</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="email" class="form-control" id="emailRegister"
+                                        placeholder="name@formula1.com">
+                                    <label for="emailRegister">Correo electrónico</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="password" class="form-control" id="passwordRegister"
+                                        placeholder="Contraseña">
+                                    <label for="passwordRegister">Contraseña</label>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Registrar</button>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
             <!---->
 
-             <!--Modal Editar Usuario-->
-             <div class="modal fade p-0" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+            <!--Modal Editar Usuario-->
+            <div class="modal fade p-0" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <form id="updateForm">
-                            <div class="modal-header">
-                                <h3 class="modal-title fs-5" id="updateLabel">Editar usuario</h3>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="nameUpdate" placeholder="Nombre">
-                                    <label for="nameUpdate">Nombre</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="lastNameUpdate"
-                                        placeholder="Apellido">
-                                    <label for="lastNameUpdate">Apellido</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="userUpdate" placeholder="Usuario">
-                                    <label for="userUpdate">Usuario</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="emailUpdate"
-                                        placeholder="name@formula1.com">
-                                    <label for="emailUpdate">Correo electrónico</label>
-                                </div>
-                                <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="passwordUpdate"
-                                        placeholder="Contraseña">
-                                    <label for="passwordUpdate">Contraseña</label>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary"
-                                    data-bs-dismiss="modal">Confirmar</button>
-                            </div>
+
                         </form>
                     </div>
                 </div>
@@ -140,15 +138,16 @@
             <section class="comments-write">
                 <div>
                     <h2 class="text-center mb-4">Deja tu posteo</h2>
-                    <form id="postForm" action="#" method="post" class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-5">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="tituloPost" required>
-                                <label for="tituloPost" class="form-label fw-bold">Título</label>
-                              </div>
-                              <div class="form-floating mb-3">
-                                <textarea class="form-control" id="comentarioPost" required></textarea>
-                                <label for="comentarioPost" class="form-label fw-bold">Post</label>
-                              </div>
+                    <form id="postForm" action="#" method="post"
+                        class="container d-flex flex-column flex-md-row justify-content-center align-items-center gap-5">
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="tituloPost" required>
+                            <label for="tituloPost" class="form-label fw-bold">Título</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="comentarioPost" required></textarea>
+                            <label for="comentarioPost" class="form-label fw-bold">Post</label>
+                        </div>
                         <button type="submit" class="btn-user mb-3">Enviar</button>
                     </form>
                 </div>
@@ -161,7 +160,8 @@
             </section>
 
             <!--Modal Publicaciones de usuario-->
-            <div id="user-post-modal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div id="user-post-modal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">

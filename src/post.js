@@ -22,6 +22,7 @@ postForm.addEventListener('submit', async (e) => {
         });
         alert("Publicación creada exitosamente");
         loadPosts();
+        postForm.reset();
     } catch (error) {
         alert("Error, no se pudo subir su publicación: " + error.message);
     }
@@ -48,7 +49,7 @@ async function loadPosts() {
                 <a href="#" class="user-link" 
                    data-bs-toggle="modal" 
                    data-bs-target="#user-post-modal" 
-                   data-mail="${post.user}">${post.user}</a>
+                   data-email="${post.user}">${post.user}</a>
             </small>
             <h6 class="mt-3">Comentarios</h6>
             <div class="comments-list" id="comments-${postId}"></div>
@@ -72,8 +73,10 @@ async function loadComments(postId) {
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
         const comment = doc.data();
-        const commentElement = document.createElement('p');
-        commentElement.textContent = `${comment.content} - por ${comment.user}`;
+        const commentElement = document.createElement('div');
+        commentElement.className = 'comment-item';
+        commentElement.innerHTML = `<p><span class="fw-bold fs-6">${comment.user} </span><span class="comment-date">${comment.timestamp.toDate().toLocaleString()}</span></p>
+                                    <p>${comment.content}</p>`;
         commentsList.appendChild(commentElement);
     });
 }
