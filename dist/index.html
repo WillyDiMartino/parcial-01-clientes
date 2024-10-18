@@ -29,20 +29,17 @@
                     <div class="collapse navbar-collapse justify-content-end text-center" id="navbarNavAltMarkup">
                         <div class="navbar-nav">
                             <div class="dropdown">
-                                <button class="btn-user dropdown-toggle" type="button" data-bs-toggle="dropdown"aria-expanded="false" id="btnUser"></button>
+                                <button class="btn-user dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="btnUser"></button>
                                 <ul class="dropdown-menu">
-                                    <div id="authNavBar">
-                                    </div>
+                                    <div id="authNavBar"></div>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </nav>
-
         </header>
         <main>
-
             <div class="header-title">
                 <h1 class="text-center"><span lang="en">Race Comment</span></h1>
                 <p class="text-center fs-4 w-50 m-auto">Disfruta de una sección exclusiva de comentarios en tiempo real mientras miras todo el fin de semana de Fórmula 1.</p>
@@ -55,19 +52,16 @@
                         <form class="loginForm">
                             <div class="modal-header">
                                 <h3 class="modal-title fs-5" id="loginLabel">Login</h3>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="emailLogin"
-                                        placeholder="name@example.com">
+                                    <input type="email" class="form-control" id="emailLogin" placeholder="name@example.com">
                                     <label for="emailLogin">Correo electrónico</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="passwordLogin"
-                                        placeholder="Password">
-                                    <label for="passwordLogin">contraseña</label>
+                                    <input type="password" class="form-control" id="passwordLogin" placeholder="Password">
+                                    <label for="passwordLogin">Contraseña</label>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -87,8 +81,7 @@
                         <form id="registerForm">
                             <div class="modal-header">
                                 <h3 class="modal-title fs-5" id="registerLabel">Registrarse</h3>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-floating mb-3">
@@ -96,22 +89,19 @@
                                     <label for="nameRegister">Nombre</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="lastNameRegister"
-                                        placeholder="Apellido">
+                                    <input type="text" class="form-control" id="lastNameRegister" placeholder="Apellido">
                                     <label for="lastNameRegister">Apellido</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="userRegister" placeholder="Apellido">
+                                    <input type="text" class="form-control" id="userRegister" placeholder="Usuario">
                                     <label for="userRegister">Usuario</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="emailRegister"
-                                        placeholder="name@formula1.com">
+                                    <input type="email" class="form-control" id="emailRegister" placeholder="name@formula1.com">
                                     <label for="emailRegister">Correo electrónico</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="passwordRegister"
-                                        placeholder="Contraseña">
+                                    <input type="password" class="form-control" id="passwordRegister" placeholder="Contraseña">
                                     <label for="passwordRegister">Contraseña</label>
                                 </div>
                             </div>
@@ -139,17 +129,24 @@
                     </form>
                 </div>
             </section>
-            
 
             <section class="postsShow">
-                <div id="posts-list"></div>
+                <div class="container">
+                    <div id="posts-list" class="justify-content-center"></div>
+                </div>
             </section>
+
+            
+            <div id="overlay"></div>
+            <div id="popup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; z-index:1001;">
+                <h4>Publicaciones de Usuario</h4>
+                <div id="user-posts"></div>
+                <button class="btn btn-secondary" onclick="closePopup()">Cerrar</button>
+            </div>
         </main>
 
         <footer class="py-5">
-
-            <div
-                class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-lg-around gap-2">
+            <div class="d-flex flex-column justify-content-center align-items-center flex-md-row justify-content-lg-around gap-2">
                 <a href="#"><img src="../src/img/f1_logo.png" alt="logo formula 1"></a>
                 <ul class="text-center text-md-start">
                     <span>Alumnos:</span>
@@ -160,7 +157,6 @@
                     <span>Profesor:</span>
                     <li>Nicolás Amendolara</li>
                 </ul>
-
                 <ul class="text-center text-md-start">
                     <span>Materia:</span>
                     <li>Clientes Web Mobile</li>
@@ -168,13 +164,10 @@
                     <li>DWN4AV</li>
                 </ul>
             </div>
-
             <p class="mt-3">&copy; 2024 Formula 1 - Di Martino - Paravic</p>
-
         </footer>
     </div>
     
-
     <script src="bundle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
