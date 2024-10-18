@@ -16,10 +16,6 @@
     overflow:hidden;  
 }
 
-body{
-     background: linear-gradient(to top left, #15151d62, #f5f5f5);
-}
-
 .contenedor-inicial{
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -28,7 +24,15 @@ body{
 }
 
 .header-title{
-    height: 720px;
+    background-image: url('../img/foto_ferrari.webp');
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+}
+
+.header-title p{
+    background-color: #15151d57;
 }
 
 .navbar {
@@ -52,7 +56,8 @@ h1{
     font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin-top: 5rem;
+    font-size: 10rem;
+    text-shadow: #15151d 2px 0 1rem;
 }
 
 .btn-user{
@@ -73,22 +78,6 @@ h1{
 font-weight: 500;
 }
 
-.video-f1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 670px;
-    height: 390px;
-    border: #15151d 2px solid;
-    border-radius: 10px;
-    margin: 2rem auto;
-    box-shadow: #15151d 0px 0px 5px;
-}
-
-video{
-   border-radius: 10px;
-}
-
 /*----comments-----*/
 .comments-write{
     background-color: #e10600;
@@ -102,6 +91,13 @@ video{
 
 .comments-show{
     height: 200px;
+}
+
+.post-item{
+    background-color: #f5f5f5;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
 }
 /*----footer-----*/
 

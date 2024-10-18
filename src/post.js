@@ -37,7 +37,7 @@ async function loadPosts() {
             const post = doc.data();
             const postId = doc.id;
             const postElement = document.createElement('div');
-            postElement.className = 'col-md-6 mb-4';
+            postElement.className = 'col-12 post-item';
 
             postElement.innerHTML = `
     <div class="card">
