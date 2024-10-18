@@ -24,9 +24,7 @@ loginForm.addEventListener('submit', async (e) => {
     const password = document.getElementById('passwordLogin').value;
     await login({ email, password });
     alert("Usuario logueado");
-    loginForm.reset();
+    window.location.reload();
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    authNav();
-});
+authNav();

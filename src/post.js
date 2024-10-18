@@ -48,7 +48,7 @@ async function loadPosts() {
                 <a href="#" class="user-link" 
                    data-bs-toggle="modal" 
                    data-bs-target="#user-post-modal" 
-                   data-email="${post.user}">${post.user}</a>
+                   data-mail="${post.user}">${post.user}</a>
             </small>
             <h6 class="mt-3">Comentarios</h6>
             <div class="comments-list" id="comments-${postId}"></div>

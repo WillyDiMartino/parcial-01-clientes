@@ -60,12 +60,12 @@
                             <div class="modal-body">
                                 <div class="form-floating mb-3">
                                     <input type="email" class="form-control" id="emailLogin"
-                                        placeholder="name@example.com">
+                                        placeholder="nombre@ejemplo.com">
                                     <label for="emailLogin">Correo electrónico</label>
                                 </div>
                                 <div class="form-floating">
                                     <input type="password" class="form-control" id="passwordLogin"
-                                        placeholder="Password">
+                                        placeholder="Contraseña">
                                     <label for="passwordLogin">Contraseña</label>
                                 </div>
                             </div>
@@ -84,40 +84,52 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <form id="registerForm">
+                           
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!---->
+
+             <!--Modal Editar Usuario-->
+             <div class="modal fade p-0" id="update" tabindex="-1" aria-labelledby="updateLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <form id="updateForm">
                             <div class="modal-header">
-                                <h3 class="modal-title fs-5" id="registerLabel">Registrarse</h3>
+                                <h3 class="modal-title fs-5" id="updateLabel">Editar usuario</h3>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="nameRegister" placeholder="Nombre">
-                                    <label for="nameRegister">Nombre</label>
+                                    <input type="text" class="form-control" id="nameUpdate" placeholder="Nombre">
+                                    <label for="nameUpdate">Nombre</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="lastNameRegister"
+                                    <input type="text" class="form-control" id="lastNameUpdate"
                                         placeholder="Apellido">
-                                    <label for="lastNameRegister">Apellido</label>
+                                    <label for="lastNameUpdate">Apellido</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="userRegister" placeholder="Usuario">
-                                    <label for="userRegister">Usuario</label>
+                                    <input type="text" class="form-control" id="userUpdate" placeholder="Usuario">
+                                    <label for="userUpdate">Usuario</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="email" class="form-control" id="emailRegister"
+                                    <input type="email" class="form-control" id="emailUpdate"
                                         placeholder="name@formula1.com">
-                                    <label for="emailRegister">Correo electrónico</label>
+                                    <label for="emailUpdate">Correo electrónico</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="password" class="form-control" id="passwordRegister"
+                                    <input type="password" class="form-control" id="passwordUpdate"
                                         placeholder="Contraseña">
-                                    <label for="passwordRegister">Contraseña</label>
+                                    <label for="passwordUpdate">Contraseña</label>
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                 <button type="submit" class="btn btn-primary"
-                                    data-bs-dismiss="modal">Registrarse</button>
+                                    data-bs-dismiss="modal">Confirmar</button>
                             </div>
                         </form>
                     </div>
